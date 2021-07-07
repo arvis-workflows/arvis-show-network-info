@@ -1,0 +1,38 @@
+{
+  "name": "arvis-show-network-info",
+  "version": "0.0.1",
+  "description": "Arvis Workflow - See network info and discover local devices",
+  "license": "MIT",
+  "author": {
+    "name": "Jeppe Stærk",
+    "email": "dev@staerk.io"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "postinstall": "arvish-init",
+    "preuninstall": "arvish-cleanup"
+  },
+  "files": [
+    "index.js",
+    "icon.png",
+    "icons/*.png",
+    "arvis-workflow.json"
+  ],
+  "keywords": [
+    "arvis",
+    "arvis-workflow",
+    "local-ip",
+    "public-ip",
+    "gateway-ip",
+    "network-discovery"
+  ],
+  "dependencies": {
+    "arvish": ">=0.4.6",
+    "default-gateway": "^5.0.3",
+    "internal-ip": "^4.3.0",
+    "local-devices": "^2.0.0",
+    "public-ip": "^3.2.0"
+  }
+}

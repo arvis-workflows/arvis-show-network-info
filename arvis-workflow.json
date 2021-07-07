@@ -1,0 +1,92 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jopemachine/arvis-extension-validator/master/workflow-schema.json",
+  "category": "Tools",
+  "creator": "Jeppe Staerk",
+  "description": "See network info and local devices",
+  "name": "Show Network Info",
+  "readme": "# Arvis-show-network-info\n> arvis workflow to see network info and discover local devices\n\n## Usage:\nIn arvis, type `ip4`, ⏎\n- press ⏎ to copy a ip address.\n- press ⌘ + ⏎ to open ip address in browser.\n- press ⌥ + ⏎ to connect to ip address via ssh.\n\n## Highlights:\n- See local-, public-, and gateway ip address.\n- Scan and list all devices on local network.\n- Copy ip to clipboard.\n- Open ip in browser.\n- Connect to ip via ssh.\n- Toggle functions via Workflow Variables.\n\n## Contributions:\nPlease feel free to create a PR and/or make a code review!\n[GitHub Repository](https://github.com/jeppestaerk/arvis-show-network-info)\n\n## License\nMIT © [Jeppe Stærk](https://staerk.io)",
+  "version": "0.0.1",
+  "defaultIcon": "icon.png",
+  "webAddress": "https://github.com/jopemachine/arvis-show-network-info#readme",
+  "enabled": true,
+  "variables": {
+    "keyword": "ip4",
+    "show_actions": "true",
+    "show_contribute": "true",
+    "show_gateway": "true",
+    "show_ipv6": "true",
+    "show_local": "true",
+    "show_public": "true",
+    "show_scan": "true"
+  },
+  "commands": [
+    {
+      "type": "scriptFilter",
+      "command": "ip4",
+      "title": "Show Network Info",
+      "subtitle": "",
+      "scriptFilter": "node index.js \"{query}\"",
+      "runningSubtext": "Scanning...",
+      "withspace": true,
+      "argType": "optional",
+      "actions": [
+        {
+          "modifiers": "normal",
+          "type": "cond",
+          "if": {
+            "cond": "{var:action} == \"copy\"",
+            "actions": {
+              "then": [
+                {
+                  "modifiers": "normal",
+                  "type": "clipboard",
+                  "text": "{query}",
+                  "actions": [
+                    {
+                      "modifiers": "normal",
+                      "type": "notification",
+                      "title": "IP copied to clipboard!",
+                      "text": "{query}"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "modifiers": "normal",
+          "type": "cond",
+          "if": {
+            "cond": "{var:action} == \"browser\"",
+            "actions": {
+              "then": [
+                {
+                  "modifiers": "normal",
+                  "type": "open",
+                  "target": "{query}"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "modifiers": "normal",
+          "type": "cond",
+          "if": {
+            "cond": "{var:action} == \"rerun\"",
+            "actions": {
+              "then": [
+                {
+                  "type": "resetInput",
+                  "modifiers": "normal",
+                  "newInput": "{query}"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
