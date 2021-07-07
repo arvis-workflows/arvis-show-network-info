@@ -30,7 +30,7 @@ In Arvis, type `ip4`, <kbd>⏎</kbd>
 - press <kbd>⌘</kbd> + <kbd>⏎</kbd> to open ip address in browser.
 - press <kbd>⌥</kbd> + <kbd>⏎</kbd> to connect to ip address via ssh.
 
-<img src="https://raw.githubusercontent.com/jeppestaerk/arvis-show-network-info/master/preview.gif">
+<img src="https://raw.githubusercontent.com/jeppestaerk/alfred-show-network-info/master/preview.gif">
 
 
 ## Contributions
