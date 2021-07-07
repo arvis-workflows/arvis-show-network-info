@@ -2,7 +2,7 @@
 
 > Arvis workflow to see network info and discover local devices
 
-<img src="https://raw.githubusercontent.com/jeppestaerk/arvis-show-network-info/master/preview.png">
+<img src="https://raw.githubusercontent.com/jeppestaerk/alfred-show-network-info/master/preview.png">
 
 ## Install
 
@@ -10,7 +10,7 @@ Use `npm`
 ```
 $ npm install --global arvis-show-network-info
 ```
-or download `arvisworkflow` file from [releases](https://github.com/jeppestaerk/arvis-show-network-info/releases/latest)
+or download `arvisworkflow` file from [releases](https://github.com/jeppestaerk/alfred-show-network-info/releases/latest)
 
 
 ## Highlights
@@ -67,10 +67,16 @@ Please feel free to create a PR and/or make a code review!
 
 - Icons made by [Freepik](http://www.freepik.com) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/)
 
+## 🔗 This workflow is converted from [alfred-workflow](https://github.com/jeppestaerk/alfred-show-network-info).
+
+* Note that there might be some code change or different actions from the original workflow.
+
+* Marked original workflow's creator to author.
+
 
 ## License
 
 MIT © [Jeppe Stærk](https://staerk.io)
 
 
-<p align="center"><img src="https://raw.githubusercontent.com/jeppestaerk/arvis-show-network-info/master/icon.png" width="64" ></p>
+<p align="center"><img src="https://raw.githubusercontent.com/jeppestaerk/alfred-show-network-info/master/icon.png" width="64" ></p>
